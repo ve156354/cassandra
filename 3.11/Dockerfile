@@ -2,7 +2,7 @@
 FROM debian:stretch-slim
 
 # explicitly set user/group IDs
-RUN groupadd -r cassandra --gid=999 && useradd -r -g cassandra --uid=999 cassandra
+RUN groupadd -r cassandra --gid=313 && useradd -r -g cassandra --uid=312 cassandra
 
 RUN set -ex; \
 	apt-get update; \
