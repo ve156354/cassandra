@@ -2,7 +2,7 @@
 FROM debian:stretch-slim
 
 # explicitly set user/group IDs
-RUN groupadd -r cassandra --gid=313 && useradd -r -g cassandra --uid=312 cassandra
+RUN groupadd -r cassandra --gid=1002 && useradd -r -g cassandra --uid=1002 cassandra
 
 RUN set -ex; \
 	apt-get update; \
@@ -152,7 +152,7 @@ RUN mkdir -p /var/lib/cassandra "$CASSANDRA_CONFIG" \
 	&& chown -R cassandra:cassandra /var/lib/cassandra "$CASSANDRA_CONFIG" \
 	&& chmod 777 /var/lib/cassandra "$CASSANDRA_CONFIG"
 VOLUME /var/lib/cassandra
-USER 312
+USER 1002
 
 # 7000: intra-node communication
 # 7001: TLS intra-node communication
